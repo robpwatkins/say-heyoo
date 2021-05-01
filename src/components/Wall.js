@@ -4,9 +4,10 @@ export default function Wall() {
   const [users, setUsers] = useState([]);
   
   const fetchUsers = async () => {
-    const res = await fetch('https://puppyapi.com/pups');
-    const users = await res.json();
-    setUsers(users);
+    const res = await fetch('https://puppyapi.com/pups', { mode: "no-cors" });
+    console.log(res.json());
+    // const usersArr = await res.json();
+    // setUsers(usersArr);
   }
 
   useEffect(() => {
